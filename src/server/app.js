@@ -1,3 +1,5 @@
+var fs = require('fs');
+var https = require('https');
 var express = require('express');
 var path = require('path');
 var morgan = require('morgan'); // logger
@@ -81,9 +83,13 @@ db.once('open', function() {
     res.sendFile(path.join(__dirname,'/../../dist/index.html'));
   });
 
-  app.listen(app.get('port'), function() {
-    console.log('Angular 2 Full Stack listening on port '+app.get('port'));
+  https.createServer({
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+    }, app).listen(app.get('port'), function() {
+      console.log('Angular 2 Full Stack listening on port '+app.get('port'));
   });
+
 });
 
 module.exports = app;
