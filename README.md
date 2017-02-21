@@ -42,9 +42,6 @@ Run `npm run prod` to run frontend with a production ready bundle.
 16. `heroku open`
 17. A window will open with your app online
 
-## Preview
-![Preview](https://raw.githubusercontent.com/DavideViolante/Angular2-Full-Stack/master/demo.gif "Preview")
-
 ## Please open an issue if
 * you have any suggestion or advice to improve this project.
 * you noticed any problem or error.
